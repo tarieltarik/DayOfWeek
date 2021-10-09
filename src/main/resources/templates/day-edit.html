@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Day change</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<h1>Day plans</h1>
+
+<div class="container mt-5">
+    <h1>Week days</h1>
+    <<h1>Change an article</h1>
+
+    <form method="post">
+        <div th:each="el : ${post}">
+            <input type="text" th:value="${el.day}" name="day" placeholder="Input a day" class="form-control"><br>
+            <input type="text" th:value="${el.subjects}" name="subjects" placeholder="Input a lessons" class="form-control"><br>
+            <textarea name="activities"  placeholder="Input an activities" class="form-control" th:text="${el.activities}"/><br>
+            <button type="submit" class="btn btn-success">Save change's day</button>
+        </div>
+    </form>
+    </div>
+</div>
+
+<footer th:insert="blocks/footer :: footer"></footer>
+</body>
+</html>

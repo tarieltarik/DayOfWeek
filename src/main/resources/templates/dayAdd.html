@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+
+<div class="container mt-5">
+    <h1>Input a day and plans</h1>
+    <form action="/day/add" method="post">
+        <input type="text" name="day" placeholder="Day " class="form-control"><br>
+        <input type="text" name="subjects" placeholder="Input schools subjects" class="form-control"><br>
+        <textarea name="activities" placeholder="Input activites after school" class="form-control"></textarea><br>
+        <button type="submit" class="btn btn-success">Add day</button>
+    </form>
+
+</div>
+
+
+<footer th:insert="blocks/footer :: footer"></footer>
+</body>
+</html>
